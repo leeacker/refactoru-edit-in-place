@@ -1,0 +1,43 @@
+.body {
+	width: 90%;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	background-color: peachpuff;
+	position: absolute;
+}
+h1, h2 {
+	color: #0769AD;
+	text-align: center;
+	margin-top: 30px;
+	font-family: monospace;
+}
+.body div {
+	position: relative;
+	overflow: hidden;
+}
+.name, .age, .occupation {
+	height: 40px;
+}
+.books {
+	height: 100px;
+}
+.editable {
+	width: 80%;
+	height: 80%;
+	top: 10%;
+	left: 10%;
+	position: absolute;
+	overflow: hidden;
+}
+textarea, .paragraph {
+	width: 50%;
+	height: 100%;
+	top:0;
+	left:25%;
+	position: absolute;
+	overflow: hidden;
+}
+.paragraph {
+	background-color: peachpuff;
+}
