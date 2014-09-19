@@ -1,28 +1,45 @@
 $(document).on('ready', function() {
 
-	var paragraph = $('.paragraph')
-	var textbox = $('<textarea></textarea>')
-	var This = $(this)
+  	
+  	var newParagraph = $('<p>');
 
-	var callerID = function(event){
-		return event.target.parent.class;
-	}
-	var getClass = function(){
-		return attr('class');
-	};
-	var getParent = function(){
-		return callerID.parent();
-	};
-  
-	$('.editable').on('click', paragraph, function(event){
-		var pText = $(this).text();
-		var pParent = callerID;
-		console.log(pParent);
-		console.log(pText);
-		paragraph.remove();
+  	$('textarea').hide();
+
+
+	$('.editable').on('click', function(){
+		if ($(this).find('p').css('display') !== 'none'){
+
+		var thisText = $(this).find('p').text();
+
+		$(this).find('textarea')
+		.text(thisText)
+		.show()
+		.focus();
+
+		$(this).find('p').remove();
 		
-		
+		}
+	});
+
+	$('textarea').on('focus', function(){
+		console.log('FOCUS!');
 
 	});
+
+	$('textarea').on('blur', function(){
+		var thisText = $(this).val();
+		var thisParent = $(this).closest('.editable');
+		
+			thisParent.prepend('<p>');
+
+			$(this).siblings('p')
+			.attr('class', 'paragraph')
+			.text(thisText);
+
+			$(this).hide();
+		
+	});
+
+
 
 });
